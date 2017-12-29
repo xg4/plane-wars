@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>aircraft</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        canvas {
+            border: 1px solid #000;
+            display: inline-block;
+        }
+
+        #toolbar {
+            display: inline-block;
+        }
+
+        #tooltip {
+            display: inline-block;
+        }
+
+        label {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="game"></canvas>
+    <div id="toolbar">
+        <h1>操作：</h1>
+        <div id="tooltip">
+            <p>WSAD 上下左右</p>
+        </div>
+        <h1>for DEBUG</h1>
+        <div id="toolbar_change">
+            <label>
+                <input type="checkbox" data-debug='game_pause'> 游戏是否暂停:
+                <span class="label"></span>
+            </label>
+            <label>
+                <input type="checkbox" data-debug='player_God'> 玩家是否无敌:
+                <span class="label"></span>
+            </label>
+        </div>
+
+        <div id="toolbar-input">
+            <label>
+                <input type="range" data-debug='fps' min="1" max="100"> fps:
+                <span class="label"></span>
+            </label>
+            <label>
+                <input type="range" data-debug='player_speed' max="20"> 玩家-移动速度：
+                <span class="label"></span>
+            </label>
+            <label>
+                <input type="range" data-debug='bullet_speed' max="20"> 玩家-子弹速度：
+                <span class="label"></span>
+            </label>
+            <label>
+                <input type="range" data-debug='fire_cooldown' max='50'> 玩家-子弹冷却：
+                <span class="label"></span>
+            </label>
+
+            <label>
+                <input type="range" data-debug='enemy_speed' max="20"> 敌人-移动速度：
+                <span class="label"></span>
+            </label>
+            <label>
+                <input type="range" data-debug='enemy_bullet_speed' max="20"> 敌人-子弹速度：
+                <span class="label"></span>
+            </label>
+            <label>
+                <input type="range" data-debug='enemy_fire_cooldown' max="200"> 敌人-子弹冷却：
+                <span class="label"></span>
+            </label>
+            <label>
+                <input type="range" data-debug='enemies_number' max="20"> 每波敌人数量：
+                <span class="label"></span>
+            </label>
+            <label>
+                <input type="range" data-debug='cloud_speed' max='20'> 云朵速度：
+                <span class="label"></span>
+            </label>
+        </div>
+    </div>
+    <script src="./dist/build.js"></script>
+</body>
+
+</html>
